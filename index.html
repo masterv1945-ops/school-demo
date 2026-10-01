@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>سامانه مدرسه</title>
 
     <style>
@@ -16,44 +18,59 @@
         header {
             background: #1e3a8a;
             color: white;
-            padding: 25px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         .container {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 20px;
         }
 
         .welcome {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 40px 25px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
         }
 
         .buttons {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 35px;
         }
 
         button {
+            width: 180px;
+            padding: 18px;
             border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            background: #2563eb;
+            border-radius: 12px;
             color: white;
-            font-size: 16px;
+            font-size: 17px;
+            font-family: inherit;
             cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .manager {
+            background: #1e3a8a;
+        }
+
+        .teacher {
+            background: #047857;
+        }
+
+        .mother {
+            background: #7c3aed;
         }
 
         button:hover {
-            background: #1d4ed8;
+            transform: translateY(-3px);
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -68,17 +85,35 @@
 <div class="container">
 
     <div class="welcome">
+
         <h2>خوش آمدید</h2>
 
         <p>
-            برای ورود، نوع حساب خود را انتخاب کنید.
+            نوع حساب خود را انتخاب کنید:
         </p>
 
         <div class="buttons">
-            <button>👨‍💼 مدیر</button>
-            <button>👨‍🏫 معلم</button>
-            <button>👩 مادر</button>
+
+            <button
+                class="manager"
+                onclick="location.href='manager.html'">
+                👨‍💼 مدیر
+            </button>
+
+            <button
+                class="teacher"
+                onclick="location.href='teacher.html'">
+                👨‍🏫 معلم
+            </button>
+
+            <button
+                class="mother"
+                onclick="location.href='mother.html'">
+                👩 مادر
+            </button>
+
         </div>
+
     </div>
 
 </div>
