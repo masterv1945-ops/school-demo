@@ -1,45 +1,129 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پنل معلم</title>
+    <title>پنل معلم | سامانه مدرسه</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Tahoma, Arial;
-            background: #f3f6fa;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f4f6f8;
+            color: #263238;
         }
 
         header {
-            background: #047857;
+            background: #37474f;
             color: white;
-            padding: 25px;
-            text-align: center;
+            padding: 25px 20px;
+            border-bottom: 4px solid #546e7a;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+            color: #cfd8dc;
+            font-size: 14px;
         }
 
         .container {
-            max-width: 900px;
-            margin: 30px auto;
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .welcome {
+            background: white;
+            border: 1px solid #dfe4e7;
+            border-radius: 9px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            margin-top: 0;
+        }
+
+        .welcome p {
+            color: #607d8b;
+        }
+
+        .class-box {
+            background: white;
+            border: 1px solid #dfe4e7;
+            border-radius: 9px;
             padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .class-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
         }
 
         .card {
             background: white;
+            border: 1px solid #dfe4e7;
+            border-radius: 9px;
             padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #607d8b;
+            line-height: 1.8;
+            font-size: 14px;
         }
 
         button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #059669;
+            width: 100%;
+            padding: 12px;
+            background: #37474f;
             color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
             cursor: pointer;
+        }
+
+        button:hover {
+            background: #455a64;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            background: #263238;
+            color: #cfd8dc;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -47,31 +131,61 @@
 <body>
 
 <header>
-    <h1>👨‍🏫 پنل معلم</h1>
-    <p>مدیریت دانش‌آموزان و نمرات</p>
+    <div class="header-content">
+        <div class="title">پنل معلم</div>
+        <div class="subtitle">سامانه مدیریت آموزشی مدرسه</div>
+    </div>
 </header>
 
 <div class="container">
 
-    <div class="card">
-        <h2>👨‍🎓 دانش‌آموزان</h2>
-        <p>مشاهده دانش‌آموزان کلاس</p>
-        <button>مشاهده</button>
+    <div class="welcome">
+        <h2>پنل آموزشی</h2>
+
+        <p>
+            در این بخش می‌توانید نمرات و موارد انضباطی دانش‌آموزان را ثبت و مدیریت کنید.
+        </p>
     </div>
 
-    <div class="card">
-        <h2>📝 ثبت نمره</h2>
-        <p>ثبت نمره برای دانش‌آموزان</p>
-        <button>ثبت نمره</button>
+    <div class="class-box">
+        <div>کلاس فعال</div>
+        <div class="class-name">شهید شهریاری</div>
     </div>
 
-    <div class="card">
-        <h2>⚠️ ثبت تخلف</h2>
-        <p>ثبت تخلف دانش‌آموز</p>
-        <button>ثبت تخلف</button>
+    <div class="grid">
+
+        <div class="card">
+            <h3>دانش‌آموزان</h3>
+            <p>مشاهده فهرست دانش‌آموزان کلاس.</p>
+            <button>مشاهده دانش‌آموزان</button>
+        </div>
+
+        <div class="card">
+            <h3>ثبت نمره</h3>
+            <p>ثبت نمرات دانش‌آموزان در دروس مربوطه.</p>
+            <button>ثبت نمره</button>
+        </div>
+
+        <div class="card">
+            <h3>ثبت مورد انضباطی</h3>
+            <p>ثبت و ارسال موارد انضباطی مربوط به دانش‌آموزان.</p>
+            <button>ثبت مورد انضباطی</button>
+        </div>
+
+        <div class="card">
+            <h3>سوابق ثبت‌شده</h3>
+            <p>مشاهده نمرات و موارد انضباطی ثبت‌شده.</p>
+            <button>مشاهده سوابق</button>
+        </div>
+
     </div>
 
 </div>
 
+<footer>
+    سامانه مدیریت مدرسه
+</footer>
+
 </body>
 </html>
+```
