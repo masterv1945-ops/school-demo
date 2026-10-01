@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -5,72 +6,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>سامانه مدرسه</title>
+    <title>سامانه مدیریت مدرسه</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Tahoma, Arial, sans-serif;
-            background: #f3f6fa;
-            color: #222;
+            background: #f4f6f8;
+            color: #263238;
         }
 
         header {
-            background: #1e3a8a;
+            background: #263238;
             color: white;
-            padding: 30px 20px;
-            text-align: center;
+            padding: 28px 20px;
+            border-bottom: 4px solid #455a64;
+        }
+
+        .header-content {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .school-title {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .system-title {
+            font-size: 14px;
+            color: #cfd8dc;
         }
 
         .container {
             max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
+            margin: 55px auto;
+            padding: 0 20px;
         }
 
         .welcome {
             background: white;
-            padding: 40px 25px;
-            border-radius: 20px;
+            border: 1px solid #dfe4e7;
+            border-radius: 10px;
+            padding: 45px 30px;
             text-align: center;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .welcome h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .welcome p {
+            color: #607d8b;
+            margin-bottom: 35px;
         }
 
         .buttons {
             display: flex;
-            gap: 20px;
             justify-content: center;
+            gap: 18px;
             flex-wrap: wrap;
-            margin-top: 35px;
         }
 
         button {
-            width: 180px;
-            padding: 18px;
-            border: none;
-            border-radius: 12px;
-            color: white;
-            font-size: 17px;
+            width: 200px;
+            padding: 16px;
+            border: 1px solid #546e7a;
+            border-radius: 7px;
+            background: white;
+            color: #263238;
             font-family: inherit;
+            font-size: 16px;
             cursor: pointer;
             transition: 0.2s;
         }
 
-        .manager {
-            background: #1e3a8a;
-        }
-
-        .teacher {
-            background: #047857;
-        }
-
-        .mother {
-            background: #7c3aed;
-        }
-
         button:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
+            background: #eceff1;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 70px;
+            padding: 25px;
+            text-align: center;
+            background: #263238;
+            color: #cfd8dc;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -78,38 +106,41 @@
 <body>
 
 <header>
-    <h1>🏫 سامانه مدرسه</h1>
-    <p>سامانه مدیریت مدرسه</p>
+    <div class="header-content">
+
+        <div class="school-title">
+            سامانه مدیریت مدرسه
+        </div>
+
+        <div class="system-title">
+            سامانه خدمات آموزشی و ارتباط با اولیای دانش‌آموزان
+        </div>
+
+    </div>
 </header>
 
 <div class="container">
 
     <div class="welcome">
 
-        <h2>خوش آمدید</h2>
+        <h2>ورود به سامانه</h2>
 
         <p>
-            نوع حساب خود را انتخاب کنید:
+            لطفاً نوع حساب کاربری خود را انتخاب کنید.
         </p>
 
         <div class="buttons">
 
-            <button
-                class="manager"
-                onclick="location.href='manager.html'">
+            <button onclick="location.href='manager.html'">
                 👨‍💼 مدیر
             </button>
 
-            <button
-                class="teacher"
-                onclick="location.href='teacher.html'">
+            <button onclick="location.href='teacher.html'">
                 👨‍🏫 معلم
             </button>
 
-            <button
-                class="mother"
-                onclick="location.href='mother.html'">
-                👩 مادر
+            <button onclick="location.href='mother.html'">
+                👪 والدین
             </button>
 
         </div>
@@ -118,5 +149,11 @@
 
 </div>
 
+<footer>
+    سامانه مدیریت مدرسه
+</footer>
+
 </body>
+
 </html>
+```
