@@ -1,45 +1,165 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پنل مادر</title>
+
+    <title>پنل والدین | سامانه مدیریت مدرسه</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Tahoma, Arial;
-            background: #f3f6fa;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f4f6f8;
+            color: #263238;
         }
 
         header {
-            background: #7c3aed;
+            background: #263238;
             color: white;
-            padding: 25px;
-            text-align: center;
+            padding: 25px 20px;
+            border-bottom: 4px solid #455a64;
+        }
+
+        .header-content {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .school-title {
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .system-title {
+            font-size: 14px;
+            color: #cfd8dc;
         }
 
         .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
+            max-width: 1050px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .student-info {
+            background: white;
+            border: 1px solid #dfe4e7;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .student-info h2 {
+            margin-top: 0;
+            color: #263238;
+            font-size: 21px;
+        }
+
+        .student-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail {
+            background: #f7f8f9;
+            border: 1px solid #e5e8ea;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .detail-title {
+            color: #78909c;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .detail-value {
+            font-weight: bold;
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
         }
 
         .card {
             background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+            border: 1px solid #dfe4e7;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #607d8b;
+            font-size: 14px;
+            line-height: 1.8;
         }
 
         button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #7c3aed;
-            color: white;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #546e7a;
+            border-radius: 6px;
+            background: white;
+            color: #263238;
+            font-family: inherit;
             cursor: pointer;
+        }
+
+        button:hover {
+            background: #eceff1;
+        }
+
+        .notifications {
+            margin-top: 25px;
+            background: white;
+            border: 1px solid #dfe4e7;
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .notification {
+            padding: 15px;
+            border-bottom: 1px solid #eceff1;
+        }
+
+        .notification:last-child {
+            border-bottom: none;
+        }
+
+        .notification-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .notification-date {
+            color: #90a4ae;
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            background: #263238;
+            color: #cfd8dc;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -47,36 +167,108 @@
 <body>
 
 <header>
-    <h1>👩 پنل مادر</h1>
-    <p>اطلاعات فرزند شما</p>
+    <div class="header-content">
+        <div class="school-title">
+            سامانه مدیریت مدرسه
+        </div>
+
+        <div class="system-title">
+            پنل والدین و اولیای دانش‌آموزان
+        </div>
+    </div>
 </header>
 
 <div class="container">
 
-    <div class="card">
-        <h2>👨‍🎓 علی رضایی</h2>
-        <p>کلاس: هشتم الف</p>
+    <div class="student-info">
+
+        <h2>اطلاعات دانش‌آموز</h2>
+
+        <div class="student-details">
+
+            <div class="detail">
+                <div class="detail-title">نام و نام خانوادگی</div>
+                <div class="detail-value">معراج غلامی</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">پایه تحصیلی</div>
+                <div class="detail-value">هشتم</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">کلاس</div>
+                <div class="detail-value">هشتم الف</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">وضعیت تحصیلی</div>
+                <div class="detail-value">فعال</div>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="card">
-        <h2>📊 نمرات</h2>
-        <p>مشاهده نمرات فرزند</p>
-        <button>مشاهده نمرات</button>
+    <div class="section">
+
+        <div class="card">
+            <h3>نمرات</h3>
+            <p>
+                مشاهده نمرات ثبت‌شده برای دانش‌آموز
+            </p>
+
+            <button>
+                مشاهده نمرات
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>هشدارها و موارد انضباطی</h3>
+            <p>
+                مشاهده هشدارها و موارد انضباطی ثبت‌شده
+            </p>
+
+            <button>
+                مشاهده هشدارها
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>کارنامه</h3>
+            <p>
+                مشاهده کارنامه‌های منتشرشده
+            </p>
+
+            <button>
+                مشاهده کارنامه
+            </button>
+        </div>
+
     </div>
 
-    <div class="card">
-        <h2>⚠️ هشدارها</h2>
-        <p>مشاهده تخلفات و هشدارها</p>
-        <button>مشاهده هشدارها</button>
-    </div>
+    <div class="notifications">
 
-    <div class="card">
-        <h2>📄 کارنامه</h2>
-        <p>مشاهده کارنامه فرزند</p>
-        <button>مشاهده کارنامه</button>
+        <h3>آخرین اطلاعیه‌ها</h3>
+
+        <div class="notification">
+            <div class="notification-title">
+                اطلاعیه جدیدی ثبت نشده است.
+            </div>
+
+            <div class="notification-date">
+                سامانه مدیریت مدرسه
+            </div>
+        </div>
+
     </div>
 
 </div>
 
+<footer>
+    سامانه مدیریت مدرسه | پنل والدین
+</footer>
+
 </body>
 </html>
+```
