@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>پنل والدین | سامانه مدیریت مدرسه</title>
+    <title>پنل والدین | سامانه مدرسه</title>
 
     <style>
         * {
@@ -49,17 +49,21 @@
             padding: 0 20px;
         }
 
-        .student-info {
+        .student-info,
+        .notifications,
+        .card {
             background: white;
             border: 1px solid #dfe4e7;
             border-radius: 8px;
+        }
+
+        .student-info {
             padding: 25px;
             margin-bottom: 25px;
         }
 
         .student-info h2 {
             margin-top: 0;
-            color: #263238;
             font-size: 21px;
         }
 
@@ -94,9 +98,6 @@
         }
 
         .card {
-            background: white;
-            border: 1px solid #dfe4e7;
-            border-radius: 8px;
             padding: 24px;
         }
 
@@ -128,9 +129,6 @@
 
         .notifications {
             margin-top: 25px;
-            background: white;
-            border: 1px solid #dfe4e7;
-            border-radius: 8px;
             padding: 25px;
         }
 
@@ -168,6 +166,7 @@
 
 <header>
     <div class="header-content">
+
         <div class="school-title">
             سامانه مدیریت مدرسه
         </div>
@@ -175,6 +174,7 @@
         <div class="system-title">
             پنل والدین و اولیای دانش‌آموزان
         </div>
+
     </div>
 </header>
 
@@ -198,7 +198,7 @@
 
             <div class="detail">
                 <div class="detail-title">کلاس</div>
-                <div class="detail-value">هشتم الف</div>
+                <div class="detail-value">شهید شهریاری</div>
             </div>
 
             <div class="detail">
@@ -215,7 +215,7 @@
         <div class="card">
             <h3>نمرات</h3>
             <p>
-                مشاهده نمرات ثبت‌شده برای دانش‌آموز
+                مشاهده نمرات ثبت‌شده برای دانش‌آموز.
             </p>
 
             <button>
@@ -226,7 +226,7 @@
         <div class="card">
             <h3>هشدارها و موارد انضباطی</h3>
             <p>
-                مشاهده هشدارها و موارد انضباطی ثبت‌شده
+                مشاهده هشدارها و موارد انضباطی ثبت‌شده.
             </p>
 
             <button>
@@ -237,7 +237,7 @@
         <div class="card">
             <h3>کارنامه</h3>
             <p>
-                مشاهده کارنامه‌های منتشرشده
+                مشاهده کارنامه‌های منتشرشده.
             </p>
 
             <button>
@@ -252,6 +252,7 @@
         <h3>آخرین اطلاعیه‌ها</h3>
 
         <div class="notification">
+
             <div class="notification-title">
                 اطلاعیه جدیدی ثبت نشده است.
             </div>
@@ -259,6 +260,7 @@
             <div class="notification-date">
                 سامانه مدیریت مدرسه
             </div>
+
         </div>
 
     </div>
