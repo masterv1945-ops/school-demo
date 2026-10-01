@@ -1,45 +1,115 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پنل مدیر</title>
+    <title>پنل مدیریت | سامانه مدرسه</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Tahoma, Arial;
-            background: #f3f6fa;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f4f6f8;
+            color: #263238;
         }
 
         header {
-            background: #1e3a8a;
+            background: #263238;
             color: white;
-            padding: 25px;
-            text-align: center;
+            padding: 25px 20px;
+            border-bottom: 4px solid #455a64;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+            color: #cfd8dc;
+            font-size: 14px;
         }
 
         .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .welcome {
+            background: white;
+            border: 1px solid #dfe4e7;
+            border-radius: 9px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            margin-top: 0;
+        }
+
+        .welcome p {
+            color: #607d8b;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
         }
 
         .card {
             background: white;
+            border: 1px solid #dfe4e7;
+            border-radius: 9px;
             padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #607d8b;
+            line-height: 1.8;
+            font-size: 14px;
         }
 
         button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #2563eb;
+            width: 100%;
+            padding: 12px;
+            background: #263238;
             color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
             cursor: pointer;
+        }
+
+        button:hover {
+            background: #37474f;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            background: #263238;
+            color: #cfd8dc;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -47,37 +117,68 @@
 <body>
 
 <header>
-    <h1>👨‍💼 پنل مدیر</h1>
-    <p>مدیریت مدرسه</p>
+    <div class="header-content">
+        <div class="title">پنل مدیریت مدرسه</div>
+        <div class="subtitle">سامانه مدیریت و نظارت آموزشی</div>
+    </div>
 </header>
 
 <div class="container">
 
-    <div class="card">
-        <h2>👨‍🎓 دانش‌آموزان</h2>
-        <p>مدیریت دانش‌آموزان مدرسه</p>
-        <button>مشاهده دانش‌آموزان</button>
+    <div class="welcome">
+        <h2>مدیریت مدرسه</h2>
+
+        <p>
+            از طریق این بخش می‌توانید اطلاعات آموزشی و انضباطی دانش‌آموزان را مدیریت کنید.
+        </p>
     </div>
 
-    <div class="card">
-        <h2>📊 نمرات</h2>
-        <p>مشاهده و مدیریت نمرات</p>
-        <button>مشاهده نمرات</button>
-    </div>
+    <div class="grid">
 
-    <div class="card">
-        <h2>⚠️ تخلفات</h2>
-        <p>مشاهده تخلفات دانش‌آموزان</p>
-        <button>مشاهده تخلفات</button>
-    </div>
+        <div class="card">
+            <h3>دانش‌آموزان</h3>
+            <p>مشاهده و مدیریت اطلاعات دانش‌آموزان مدرسه.</p>
+            <button>مدیریت دانش‌آموزان</button>
+        </div>
 
-    <div class="card">
-        <h2>📄 کارنامه‌ها</h2>
-        <p>مدیریت و انتشار کارنامه‌ها</p>
-        <button>مدیریت کارنامه‌ها</button>
+        <div class="card">
+            <h3>کلاس‌ها</h3>
+            <p>مدیریت کلاس‌ها و اعضای هر کلاس.</p>
+            <button>مدیریت کلاس‌ها</button>
+        </div>
+
+        <div class="card">
+            <h3>نمرات</h3>
+            <p>مشاهده و مدیریت نمرات ثبت‌شده توسط معلمان.</p>
+            <button>مشاهده نمرات</button>
+        </div>
+
+        <div class="card">
+            <h3>موارد انضباطی</h3>
+            <p>مشاهده موارد انضباطی و هشدارهای ثبت‌شده.</p>
+            <button>مشاهده موارد انضباطی</button>
+        </div>
+
+        <div class="card">
+            <h3>کارنامه‌ها</h3>
+            <p>مدیریت، بررسی و انتشار کارنامه دانش‌آموزان.</p>
+            <button>مدیریت کارنامه‌ها</button>
+        </div>
+
+        <div class="card">
+            <h3>اطلاعیه‌ها</h3>
+            <p>مدیریت اطلاعیه‌ها و پیام‌های سامانه.</p>
+            <button>مدیریت اطلاعیه‌ها</button>
+        </div>
+
     </div>
 
 </div>
 
+<footer>
+    سامانه مدیریت مدرسه
+</footer>
+
 </body>
 </html>
+```
