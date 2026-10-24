@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+/* Madrese-ye Man — shared visual system. Presentation-only overrides; no application selectors are removed. */
+:root {
+  --mm-navy: #14264b;
+  --mm-blue: #2864d7;
+  --mm-blue-hover: #1f50b2;
+  --mm-blue-soft: #edf3ff;
+  --mm-cyan: #5bb9e8;
+  --mm-bg: #f4f7fc;
+  --mm-surface: #ffffff;
+  --mm-text: #1c2942;
+  --mm-muted: #68758c;
+  --mm-line: #e2e8f2;
+  --mm-shadow: 0 2px 6px rgba(20,38,75,.035), 0 12px 32px rgba(20,38,75,.065);
+  --mm-shadow-hover: 0 8px 18px rgba(20,38,75,.07), 0 20px 42px rgba(20,38,75,.09);
+  --mm-radius: 18px;
+  --mm-ease: cubic-bezier(.2,.75,.25,1);
+}
+html { background: var(--mm-bg); color-scheme: light; scroll-behavior: smooth; }
+html[data-mode="dark"] {
+  --mm-bg: #0b1324;
+  --mm-surface: #121e33;
+  --mm-text: #e8eef9;
+  --mm-muted: #a0aec4;
+  --mm-line: #29364d;
+  --mm-blue-soft: #1b2d4b;
+  --mm-shadow: 0 2px 6px rgba(0,0,0,.16), 0 12px 32px rgba(0,0,0,.18);
+  --mm-shadow-hover: 0 8px 18px rgba(0,0,0,.22), 0 20px 42px rgba(0,0,0,.25);
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body, button, input, select, textarea { font-family: Vazirmatn, Tahoma, "Segoe UI", sans-serif !important; }
+body { color: var(--mm-text); }
+button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, [role="button"], a { touch-action: manipulation; }
+button { transition: transform .18s var(--mm-ease), box-shadow .2s var(--mm-ease), background-color .2s ease, border-color .2s ease, color .2s ease; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(40,100,215,.32) !important; outline-offset: 3px;
+}
+::selection { background: rgba(40,100,215,.18); }
+
+/* Shared page surfaces */
+.card, .panel, .login, .school, .calendar-card, .calendar, .notice, .credentials,
+.assignment, .message, .cards, .stat, .tile, .circular-card, .circular-item {
+  border-radius: var(--mm-radius);
+}
+.card, .panel, .login, .school, .calendar-card, .calendar, .notice, .credentials,
+.assignment, .message, .cards, .stat, .tile, .circular-card {
+  box-shadow: var(--mm-shadow);
+}
+.card, .panel, .login, .school, .calendar-card, .calendar, .notice, .credentials,
+.assignment, .message, .cards {
+  border: 1px solid var(--mm-line);
+}
+.card, .panel, .login, .school, .calendar-card, .calendar, .notice, .credentials,
+.assignment, .message, .cards { background: var(--mm-surface); }
+.card:hover, .tile:hover, .stat:hover, .circular-card:hover {
+  box-shadow: var(--mm-shadow-hover);
+}
+.tile { border: 1px solid var(--mm-line); }
+
+/* Primary actions are intentionally blue and consistent across roles. */
+button.primary, .primary-btn, button.btn:not(.outline):not(.secondary):not(.danger),
+button.go, button[type="submit"]:not(.danger):not(.danger-btn), .btn.primary, .button-primary {
+  background: linear-gradient(135deg, var(--mm-blue), #347ce5) !important;
+  color: #fff !important; border-color: transparent !important;
+  box-shadow: 0 5px 13px rgba(40,100,215,.18);
+}
+button.primary:hover, .primary-btn:hover, button.btn:not(.outline):not(.secondary):not(.danger):hover,
+button.go:hover, button[type="submit"]:not(.danger):not(.danger-btn):hover, .btn.primary:hover, .button-primary:hover {
+  background: linear-gradient(135deg, var(--mm-blue-hover), #2864d7) !important;
+  box-shadow: 0 8px 18px rgba(40,100,215,.24); transform: translateY(-1px);
+}
+button.secondary, .secondary-btn, button.outline, .btn.outline {
+  border: 1px solid var(--mm-line); background: var(--mm-surface); color: var(--mm-blue);
+}
+button.danger, .danger-btn { border-color: transparent; }
+button:active, .tile:active { transform: translateY(0) scale(.985); }
+
+/* Fields */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+select, textarea, .field {
+  border-radius: 12px;
+}
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea {
+  border-color: var(--mm-line);
+  transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--mm-blue) !important;
+  box-shadow: 0 0 0 3px rgba(40,100,215,.1) !important;
+}
+label { line-height: 1.8; }
+
+/* Role headers and navigation */
+.top, .topbar {
+  background: linear-gradient(115deg, #14264b, #203e70) !important;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(20,38,75,.13);
+}
+.topbar { border-bottom: 1px solid rgba(255,255,255,.1); }
+aside, .sidebar, .nav {
+  scrollbar-width: thin;
+}
+.nav button.active, .nav button:hover, .sidebar .menu-btn.active, .sidebar .menu-btn:hover {
+  background: var(--mm-blue-soft) !important; color: var(--mm-blue) !important;
+}
+.page-title, .title, .heading, .card-title { color: var(--mm-text); }
+.desc, .page-description, .page-desc, .muted, .subbrand { color: var(--mm-muted); }
+
+/* Login page: replace the ruled-paper motif with a calm, premium surface. */
+html:has(.sheet) { background: #edf2fa; }
+body:has(.sheet) { background: radial-gradient(ellipse at 10% 0%, #dce8ff 0, transparent 40%), linear-gradient(145deg,#f4f7fc,#eaf0fa); }
+.sheet {
+  max-width: 31rem !important; min-height: min(92dvh, 920px) !important;
+  margin: auto; padding: clamp(24px,5vw,42px) !important;
+  border: 1px solid rgba(255,255,255,.85); border-radius: 28px;
+  background: rgba(255,255,255,.94) !important; background-image: none !important;
+  box-shadow: 0 20px 65px rgba(20,38,75,.13), 0 2px 8px rgba(20,38,75,.04);
+  overflow: visible !important;
+}
+.sheet::before { display: none !important; }
+.sheet h1, h1 { letter-spacing: -.025em; }
+.sheet .field, .sheet input { min-height: 48px; }
+.sheet .go, .sheet button { min-height: 46px; border-radius: 13px; }
+
+/* Student page's established visual structure remains intact; unify its accents. */
+.brand, .login-logo, .tile-ico { color: var(--mm-blue); }
+.pill, .chip, .badge { border-radius: 999px; }
+.calendar-head, .section-head { gap: 12px; }
+.table-wrap, .tablewrap { max-width: 100%; overflow-x: auto; border-radius: 14px; }
+table { border-collapse: separate; border-spacing: 0; }
+th { font-weight: 700; }
+
+/* Motion stays subtle and respects reduced-motion preferences. */
+.card, .panel, .tile, .stat, .notice, .login, .school, .circular-card {
+  transition: box-shadow .22s var(--mm-ease), border-color .2s ease, transform .22s var(--mm-ease), background-color .2s ease;
+}
+@media (max-width: 720px) {
+  .wrap { padding: 14px 12px 28px; }
+  main { padding: 16px !important; }
+  .layout { min-width: 0; }
+  .grid, .grid-3, .form-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .top { gap: 10px; padding: 14px 12px; }
+  .top-title, .brand { font-size: 17px; }
+  .card, .panel, .login, .school { padding: 16px; }
+  .sheet { width: calc(100% - 24px) !important; min-height: auto !important; margin: 12px auto; }
+  button, .btn, .primary-btn, .secondary-btn, .danger-btn { min-height: 42px; }
+}
+@media (max-width: 420px) {
+  .grid, .grid-3, .form-grid { grid-template-columns: minmax(0,1fr); }
+  .tile { min-height: 96px; }
+  .sheet { padding: 24px 18px !important; border-radius: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
